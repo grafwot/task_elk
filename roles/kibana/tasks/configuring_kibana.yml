@@ -1,0 +1,14 @@
+---
+- name: Configuring Kibana
+  template:
+    src: "{{ item }}.j2"
+    dest: /etc/kibana/{{ item }}
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  loop:
+    - kibana.yml
+  notify: 
+    - restart kibana
+    - check restarting

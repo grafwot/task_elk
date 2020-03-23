@@ -1,0 +1,21 @@
+input {
+  beats {
+    type => "beats_log"
+    port => {{ beats_port }}
+  }
+
+  http {
+      type => "http_rest"
+      host => "{{ inventory_hostname }}" # default: 0.0.0.0
+      port => {{ rest_port }} # default: 8080
+  }
+ 
+# file {
+#  type => "exchange"
+#  path => [ "/tmp/exchange_log/*" ]
+#  start_position => "beginning"
+#  stat_interval => 1
+#  discover_interval => 30
+#  sincedb_path => "/dev/null"
+# }
+}

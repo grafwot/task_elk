@@ -1,0 +1,13 @@
+---
+- name: Configure Elasticsearch.
+  template:
+    src: "{{ item }}.j2"
+    dest: /etc/elasticsearch/{{ item }}
+    owner: root
+    group: elasticsearch
+    mode: 0660
+    backup: yes
+  with_items:
+      - elasticsearch.yml
+  notify: restart elasticsearch
+  notify: check restarting  

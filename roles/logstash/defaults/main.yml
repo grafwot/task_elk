@@ -1,0 +1,4 @@
+rest_port: 5555
+beats_port: 5044
+elastic_hosts: "localhost"
+elastic_port: 9200

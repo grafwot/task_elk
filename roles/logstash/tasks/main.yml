@@ -1,0 +1,14 @@
+---
+- name: install logstash
+  package:
+    name:
+      - logstash
+    state: present
+
+- name : Include configuring logstash.service
+  include_tasks: configuring_logstash.yml
+- name: Force a restart if configuration has changed.
+  meta: flush_handlers
+
+- name: Include start logstash.service 
+  include_tasks: start_logstash.yml

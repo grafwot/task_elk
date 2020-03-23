@@ -1,0 +1,6 @@
+---
+- name: test logstash
+  hosts: "192.168.30.21" 
+  become: true
+  roles:
+    - logstash

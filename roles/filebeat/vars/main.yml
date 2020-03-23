@@ -1,0 +1,8 @@
+modules_list: 
+  - "nginx.yml"
+#  - "system.yml"
+elastic_hosts: "localhost"
+elastic_port: 9200
+number_of_shards: 1
+logstash_host: "localhost"
+logstash_port: 5044

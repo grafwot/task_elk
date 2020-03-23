@@ -1,0 +1,27 @@
+filter {
+if [type] == "beats_log" {
+    kv {
+#      type => "custom_log"
+      value_split => "="
+#    fields => ["reminder"]
+      field_split => "\t"
+    }
+ 
+ date {
+    match => [ "time", "UNIX" ]
+    }
+  }
+
+  if [type] == "exchange" {
+    xml {
+     source => "message"
+     store_xml => false
+     xpath => ["/ValCurs/Record[@Date]","date"] 
+     xpath => ["/ValCurs/Record/Value","value"] 
+    }
+    date {
+      match => [ "date", "dd.MM.YYYY"]
+    }
+    
+  }
+}

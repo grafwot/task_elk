@@ -1,0 +1,11 @@
+---
+- name: include linux Mint
+  include: mint.yml
+  when: (ansible_os_family == 'Debian' and ansible_distribution_version == '18')
+ 
+- name: include ubuntu 18.04
+  include: ubuntu.yml
+  when: (ansible_os_family == 'Debian' and ansible_distribution_version == '18.04')
+
+- name: include repo for elasticsearch
+  include: repo_elasticsearch.yml 

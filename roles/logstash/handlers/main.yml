@@ -1,0 +1,10 @@
+---
+- name: restart logstash
+  service: 
+    name: logstash 
+    state: restarted
+    #- name: check restarting 
+    #  wait_for:
+      #    host: "{{ server_host }}"
+      #    port: "{{ server_port }}"
+#        state: started

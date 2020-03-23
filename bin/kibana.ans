@@ -1,0 +1,3 @@
+#!/bin/bash
+cd ~/sber_task_elk
+ansible-playbook -i myhosts -Kk kibana.yml

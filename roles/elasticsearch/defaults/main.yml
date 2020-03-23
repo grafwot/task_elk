@@ -1,0 +1,9 @@
+network_host: localhost
+cluster_name: my_cluster
+node_name: node-1
+http_port: 9200
+seed_hosts: "localhost"
+initial_master_nodes: "node-1"
+node_master: false
+node_data: false
+node_ingest: false

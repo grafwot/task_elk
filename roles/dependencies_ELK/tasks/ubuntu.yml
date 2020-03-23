@@ -1,0 +1,8 @@
+---
+- name: Dependencies for ELK
+  package:
+    name:
+      - apt-transport-https
+      - gnupg2
+      - openjdk-11-jdk
+    state: present

@@ -1,0 +1,5 @@
+#server_host: "{{ inventory_hostname }}"
+# server_port: 5601 
+# server_name: kibana
+# elasticsearch_hosts: "http://host1:port, http://host2:port"
+# elasticsearch_port: 9200

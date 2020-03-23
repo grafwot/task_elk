@@ -1,0 +1,4 @@
+server_host: "{{ inventory_hostname }}"
+server_port: 5601
+server_name: kibana
+elasticsearch_hosts: "http://localhost:9200"

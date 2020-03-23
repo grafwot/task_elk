@@ -1,0 +1,16 @@
+#!/bin/bash
+role=$1
+mkdir $role
+cd $role
+list="tasks handlers vars defaults meta files templates"
+#for var in $(ls -d */)
+#do
+#  cd $var
+  mkdir $list
+  for var1 in $list
+  do
+    echo "---" > $var1/main.yml 
+  done
+  cd -
+#done
+

@@ -1,0 +1,8 @@
+---
+- name: Dependencies for kibana linux Mint
+  package:
+    name:
+      - apt-transport-https
+      - gnupg2
+      - openjdk-8-jdk
+    state: present

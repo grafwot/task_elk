@@ -1,0 +1,6 @@
+---
+- name: elasticsearch
+  hosts: elasticsearch_cluster 
+  become: true
+  roles:
+    - elasticsearch

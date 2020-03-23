@@ -1,0 +1,14 @@
+---
+- name: install elasticsearch
+  package:
+    name:
+      - elasticsearch
+    state: present
+
+- name : Include configuring elasticsearch.service
+  include_tasks: configuring_elasticsearch.yml
+- name: Force a restart if configuration has changed.
+  meta: flush_handlers
+
+- name: Include start elasticsearch.service 
+  include_tasks: start_elasticsearch.yml

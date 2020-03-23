@@ -1,0 +1,26 @@
+---
+- name: Configuring logstash config
+  template:
+    src: "{{ item }}.j2"
+    dest: /etc/logstash/{{ item }}
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  with_items:
+    - logstash.yml
+  notify: restart logstash
+
+- name: Configuring logstash filter
+  template:
+    src: "{{ item }}.j2"
+    dest: /etc/logstash/conf.d/{{ item }}
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  with_items:
+    - filter.conf
+    - input.conf
+    - output.conf
+  notify: restart logstash

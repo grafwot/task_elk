@@ -1,0 +1,4 @@
+server_host: "{{ inventory_hostname }}"
+server_port: 5601
+server_name: sber_test
+elasticsearch_hosts: "http://192.168.30.21:9200"

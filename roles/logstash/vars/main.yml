@@ -1,0 +1,4 @@
+rest_port: 5555
+beats_port: 5044
+# elastic_hosts: "192.168.30.21"
+elastic_port: 9200

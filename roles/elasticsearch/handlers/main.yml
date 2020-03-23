@@ -1,0 +1,9 @@
+---
+- name: restart elasticsearch
+  service: 
+    name: elasticsearch 
+    state: restarted
+- name: check restarting 
+  wait_for:
+    host: "{{ network_host }}"
+    port: "{{ http_port }}"

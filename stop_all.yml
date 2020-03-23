@@ -1,0 +1,24 @@
+---
+- name: Stop all ELK
+  hosts: elasticsearch_cluster
+  become: true
+
+  tasks:
+
+#    - name: stop kibana 
+#      service: 
+#        name: kibana
+#        state: stopped
+
+    - name: stop elasticsearch
+      service: name=elasticsearch state=stopped
+
+#    - name: stop filebeat
+#      service:
+#        name: filebeat
+#        state: stopped
+
+#    - name: stop logstash
+#      service:
+#        name: logstash
+#        state: stopped
