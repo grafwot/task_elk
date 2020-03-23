@@ -1,22 +1,22 @@
 output {
   if [type] == "beats_log" {
     elasticsearch {
-      hosts    => "{{ elastic_hosts }}:{{ elastic_port }}"
-      index    => "chat-friendsoft-new1-%{+YYYY.MM.dd}"
+      hosts    => "{{ elastic_hosts }}"
+      index    => "chat-friendsoft-%{+YYYY.MM.dd}"
     }
   }
   
   if [type] == "http_rest" {
     elasticsearch {
-      hosts    => "{{ elastic_hosts }}:{{ elastic_port }}"
+      hosts    => "{{ elastic_hosts }}}"
       index    => "http-rest-%{+YYYY.MM.dd}"
     }
   }
 
   if [type] == "exchange" {
     elasticsearch {
-      hosts    => "{{ elastic_hosts }}:{{ elastic_port }}"
-      index    => "exchange-log1-%{+YYYY.MM.dd}"
+      hosts    => "{{ elastic_hosts }}"
+      index    => "exchange-log-%{+YYYY.MM.dd}"
     }
   }
 }

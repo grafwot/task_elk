@@ -10,4 +10,3 @@
   with_items:
       - elasticsearch.yml
   notify: restart elasticsearch
-  notify: check restarting  

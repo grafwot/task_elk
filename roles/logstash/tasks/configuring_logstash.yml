@@ -11,7 +11,7 @@
     - logstash.yml
   notify: restart logstash
 
-- name: Configuring logstash filter
+- name: Configuring logstash input, filter, output
   template:
     src: "{{ item }}.j2"
     dest: /etc/logstash/conf.d/{{ item }}
