@@ -1,0 +1,6 @@
+kibana_host: "192.168.30.21"
+# elastic_hosts: '"192.168.30.21:9200", "192.168.30.20:9200", "192.168.30.23:9200"'
+logstash_hosts: "192.168.30.21:5044"
+modules_list:
+#  - "nginx.yml"
+#  - "system.yml"

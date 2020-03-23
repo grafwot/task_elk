@@ -17,15 +17,19 @@
 192.168.30.21
 192.168.30.23
 192.168.30.20
-[data:vars]
-node_data=true
 
 [ingest]
 192.168.30.21
-[ingest:vars]
-node_ingest=true
 
 [elasticsearch_cluster:children]
 master
 data
 ingest
+
+[filebeat]
+192.168.30.21
+192.168.30.20
+192.168.30.23
+
+[logstash]
+192.168.30.21

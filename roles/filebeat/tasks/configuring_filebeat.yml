@@ -7,24 +7,21 @@
     group: root
     mode: 0600
     backup: yes
-  with_items:
+  loop:
     - filebeat.yml
   notify: restart filebeat
-  
+
 - name: Shutdown all filebeat modules
   raw: rm -f /etc/filebeat/modules.d/*.yml
   notify: restart filebeat
 
-- name: Configuring filebeat modules
+- name: Configuring modules
   template:
     src: "{{ item }}.j2"
     dest: /etc/filebeat/modules.d/{{ item }}
     owner: root
     group: root
     mode: 0640
-    #    backup: yes
   loop: "{{ modules_list }}"
-    #    - elasticsearch.yml
-    #    - kibana.yml
-    #    - logstash.yml
+  when: modules_list is defined
   notify: restart filebeat
