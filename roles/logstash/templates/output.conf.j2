@@ -8,7 +8,7 @@ output {
   
   if [type] == "http_rest" {
     elasticsearch {
-      hosts    => "{{ elastic_hosts }}}"
+      hosts    => "{{ elastic_hosts }}"
       index    => "http-rest-%{+YYYY.MM.dd}"
     }
   }
