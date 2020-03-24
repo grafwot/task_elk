@@ -3,4 +3,4 @@
   service:
     name: kibana
     state: started
-  notify: chek restarting 
+  notify: check restarting 
